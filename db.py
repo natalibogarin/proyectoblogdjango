@@ -1,28 +1,6 @@
 import pymysql
 
-def connect():
-    '''Realiza la conexion a la Base de datos'''
-
-    try:
-        conexion = pymysql.connect(host='localhost', #127.0.0.1
-                               user='Test',
-                                password='',
-                                db='agenda')
-        print("Conectado exitosamente a la db")
-        return conexion
-    except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
-        print("Ocurrio un error al conectar a la db:,", e)
-
-
-def create_db(conexion=connect()):
-    '''Crea las tablas de la base de datos'''
-
-    sql = 'CREATE TABLE IF NOT EXISTS contactos(id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL, nombre VARCHAR(20) NOT NULL, apellido VARCHAR(20) NOT NULL, telefono VARCHAR(14) NOT NULL, mail VARCHAR(20) NOT NULL)'
-    try:
-        with conexion.cursor() as cursor:
-            cursor.execute(sql)
-            print("La tabla fue creada con exito")
-    except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
+def co
         print("No se pudo crear la tabla:,", e)
     conexion.close()
 
