@@ -77,14 +77,7 @@ def get_all_data(conexion=connect()):
 
 def get_data(nombre):
     '''Busca un solo valor en la Base de datos'''
-    try:
-        conexion = pymysql.connect(host='localhost',
-                                    user='root',
-                                    password='123456',
-                                    db='agenda')
-        
-    except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
-        print("Errror consultando la tabla de contactos:", e)
+    pass
 
 print("hola mundo");
 print("hola mundo x2");
