@@ -1,21 +1,6 @@
 import pymysql
 
 
-//// PRACTICA EN GIT 
-
-
-def connect():
-    '''Realiza la conexion a la Base de datos'''
-
-    try:
-        conexion = pymysql.connect(host='localhost', #127.0.0.1
-                               user='Test',
-                                password='',
-                                db='agenda')
-        print("Conectado exitosamente a la db")
-        return conexion
-    except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
-        print("Ocurrio un error al conectar a la db:,", e)
 
 
 def create_db(conexion=connect()):
