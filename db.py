@@ -82,16 +82,7 @@ def get_data(nombre):
                                     user='root',
                                     password='123456',
                                     db='agenda')
-        try:
-            with conexion.cursor() as cursor:
-                sql = 'SELECT * FROM contactos WHERE nombre=%s'
-                cursor.execute(sql,nombre)
-                listanombres=cursor.fetchall()
-                for lista in listanombres:
-                    print(lista)
-        finally:
-            conexion.close()
-            print("hola mundito jijiji");
+        
     except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
         print("Errror consultando la tabla de contactos:", e)
 
