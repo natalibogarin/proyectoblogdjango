@@ -1,5 +1,10 @@
 import pymysql
 
+
+
+//// PRACTICA EN GIT 
+
+
 def connect():
     '''Realiza la conexion a la Base de datos'''
 
@@ -96,8 +101,8 @@ def get_data(nombre):
     '''Busca un solo valor en la Base de datos'''
     try:
         conexion = pymysql.connect(host='localhost',
-                                    user='Test',
-                                    password='',
+                                    user='root',
+                                    password='123456',
                                     db='agenda')
         try:
             with conexion.cursor() as cursor:
