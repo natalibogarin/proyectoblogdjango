@@ -1,7 +1,6 @@
 import pymysql
 
 
-
 //// PRACTICA EN GIT 
 
 
@@ -32,6 +31,7 @@ def create_db(conexion=connect()):
     conexion.close()
 
 
+
 def insert_data(nombre, apellido, telefono, mail, conexion=connect()):
     '''Agrega datos a la Base de Datos'''
 
@@ -41,13 +41,6 @@ def insert_data(nombre, apellido, telefono, mail, conexion=connect()):
 
     sql = 'INSERT INTO contactos(nombre, apellido, telefono,mail) VALUES (%s, %s, %s, %s)'
 
-    try:
-        cursor.execute(sql,datos)
-        print("Datos guardados con exito")
-    except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
-        print("Ocurrio un error al guardar los datos:,", e)
-    conexion.commit()
-    conexion.close()
 
 def update_data(nom_buscado,nombre, apellido, telefono, mail,conexion=connect()):
     '''Actualiza un registro en la Base de datos'''
