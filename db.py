@@ -1,6 +1,37 @@
 import pymysql
 
 
+//// PRACTICA EN GIT 
+
+
+def connect():
+    '''Realiza la conexion a la Base de datos'''
+
+    try:
+        conexion = pymysql.connect(host='localhost', #127.0.0.1
+                               user='Test',
+                                password='',
+                                db='agenda')
+        print("Conectado exitosamente a la db")
+        return conexion
+    except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
+        print("Ocurrio un error al conectar a la db:,", e)
+
+
+def create_db(conexion=connect()):
+    '''Crea las tablas de la base de datos'''
+
+    sql = 'CREATE TABLE IF NOT EXISTS contactos(id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL, nombre VARCHAR(20) NOT NULL, apellido VARCHAR(20) NOT NULL, telefono VARCHAR(14) NOT NULL, mail VARCHAR(20) NOT NULL)'
+    try:
+        with conexion.cursor() as cursor:
+            cursor.execute(sql)
+            print("La tabla fue creada con exito")
+    except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
+        print("No se pudo crear la tabla:,", e)
+    conexion.close()
+
+
+
 def insert_data(nombre, apellido, telefono, mail, conexion=connect()):
     '''Agrega datos a la Base de Datos'''
 
@@ -63,8 +94,8 @@ def get_data(nombre):
     '''Busca un solo valor en la Base de datos'''
     try:
         conexion = pymysql.connect(host='localhost',
-                                    user='Test',
-                                    password='',
+                                    user='root',
+                                    password='123456',
                                     db='agenda')
         try:
             with conexion.cursor() as cursor:
