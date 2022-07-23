@@ -86,5 +86,9 @@ def get_data(nombre):
                     print(lista)
         finally:
             conexion.close()
+            print("hola mundito jijiji");
     except(pymysql.err.OperationalError, pymysql.err.InternalError) as e:
         print("Errror consultando la tabla de contactos:", e)
+
+print("hola mundo");
+print("hola mundo x2");
