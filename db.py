@@ -1,15 +1,6 @@
 import pymysql
 
 
-def insert_data(nombre, apellido, telefono, mail, conexion=connect()):
-    '''Agrega datos a la Base de Datos'''
-
-    cursor = conexion.cursor()
-
-    datos = (nombre, apellido, telefono, mail)
-
-    sql = 'INSERT INTO contactos(nombre, apellido, telefono,mail) VALUES (%s, %s, %s, %s)'
-
 
 def update_data(nom_buscado,nombre, apellido, telefono, mail,conexion=connect()):
     '''Actualiza un registro en la Base de datos'''
