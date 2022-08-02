@@ -1,1 +1,4 @@
-proyectofinalInfo/settings/local.py
+settings/base.py
+db.sqlite3
+apps/noticias_app/migrations/__pycache__
+proyectofinalInfo/settings/__pycache__
