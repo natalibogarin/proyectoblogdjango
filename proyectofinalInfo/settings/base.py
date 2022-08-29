@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.noticias_app',
+    'apps.blog_auth'
 ]
 
 MIDDLEWARE = [
@@ -58,11 +59,12 @@ ROOT_URLCONF = 'proyectofinalInfo.urls'
 TEMPLATE_DIR = os.path.join(os.path.dirname(BASE_DIR),'templates')
 TEMPLATE_NOTICIAS = os.path.join(os.path.dirname(BASE_DIR),'templates/noticias')
 TEMPLATE_EVENTOS = os.path.join(os.path.dirname(BASE_DIR),'templates/eventos')
+TEMPLATE_AUTH = os.path.join(os.path.dirname(BASE_DIR),'templates/registration')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,TEMPLATE_NOTICIAS,TEMPLATE_EVENTOS],
+        'DIRS': [TEMPLATE_DIR,TEMPLATE_NOTICIAS,TEMPLATE_EVENTOS, TEMPLATE_AUTH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Blog - Registro completado{% endblock %}
+{% block contenido %}
+<section class="container" style="margin-top: 5%;">
+   <div class="starter-template">
+      <h1>Tu usuario ha sido creado con exito</h1>
+      <p class="lead">Si la página no es redirigida en 5 segundos pulsa <a href="{% url 'apps.blog_auth:login' %}">aquí</a></p>
+   </div>
+</sectio>
+<script>
+   setTimeout(function(){ 
+       window.location.replace("{% url 'apps.blog_auth:login' %}");
+   }, 5000);
+</script>
+{% endblock %}

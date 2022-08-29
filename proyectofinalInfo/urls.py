@@ -26,5 +26,7 @@ urlpatterns = [
     path('nosotros', views.nosotros, name='nosotros'),
     url('noticias/', include('apps.noticias_app.urls')),
     path('noticias', views.noticias, name='noticias'),
+    path('registration/', include('apps.blog_auth.urls')),
     #url('noticias/<int:id>/', views.noticiasdetalle, name='noticiasdetalle')
-]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT,show_indexes=True) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT,show_indexes=True)
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT, show_indexes=True)
+#static(settings.STATIC_URL, document_root=settings.STATIC_ROOT, show_indexes=True)

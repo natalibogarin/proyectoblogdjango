@@ -6,6 +6,10 @@ from django.utils import timezone
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100)
 
+    def __string__ (self):
+        print(self.nombre)
+        return self.nombre
+
 class Noticia(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     titulo = models.CharField(max_length=255)
@@ -22,6 +26,7 @@ class Noticia(models.Model):
 
     def comentariosAprobados(self):
         return self.comentarios.filter(aprobado=True)
+
 
 class Comentarios(models.Model):
     noticia = models.ForeignKey('Noticia',related_name='comentarios', on_delete=models.CASCADE)
