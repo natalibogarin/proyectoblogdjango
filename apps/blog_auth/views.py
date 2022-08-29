@@ -1,6 +1,6 @@
 from django.forms.forms import Form
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.views.generic import FormView
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -16,7 +16,6 @@ from .forms import SignUpForm
 class Login(auth_views.LoginView):
     ''' Vista de Login de Usuario '''
     template_name = 'registration/login.html'
-    success_url = reverse_lazy('apps.noticias_app:index')
 
 class Logout(LoginRequiredMixin, auth_views.LogoutView):
     ''' Vista de Logout/Cierre sesión de Usuario '''
@@ -34,4 +33,3 @@ class SignUpView(FormView):
         form.save()
         return super().form_valid(form)
         
-
