@@ -52,7 +52,9 @@ def noticiasdetalle(request,id):
 
     context = {
         "noticia": datanoticia,
-        "comentarios":lista_comentarios
+        "comentarios":lista_comentarios,
+        "MEDIA_ROOT": 'media/img/noticias/'
+        
     }
 
     return render(request,'detalle-noticia.html',context)

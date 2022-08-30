@@ -7,7 +7,7 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">{{noticia.titulo}}</h2>
-        <p class="lead">{{noticia.contenido}}</p>
+        <p class="lead">{{noticia.contenido|truncatechars:100}}</p>
       </div>
       <div class="col-md-5">
         <img src="{{MEDIA_ROOT}}{{noticia.img}}" width="500" alt="">
