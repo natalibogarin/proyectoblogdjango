@@ -29,5 +29,5 @@ django_heroku.settings(locals())
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE='whitenoise.storage.CompressedStaticFilesStorage'
 
-STATIC_URL = 'https://django-pbpostgres.herokuapp.com/static/'
-MEDIA_URL = 'https://django-pbpostgres.herokuapp.com/media/'
+STATIC_URL = 'https://proyectoblogdjango.herokuapp.com/static/'
+MEDIA_URL = 'https://proyectoblogdjango.herokuapp.com/media/'
